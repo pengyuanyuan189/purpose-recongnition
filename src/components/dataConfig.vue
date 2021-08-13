@@ -1,5 +1,5 @@
 <template>
-  <el-form :model="ruleForm" :rules="rules" ref="ruleForm" label-width="100px" class="demo-ruleForm">
+  <el-form :model="ruleForm" :rules="rules" ref="ruleForm" label-width="150px" class="demo-ruleForm">
     <el-form-item label="战斗机的数目" prop="combatCnt">
       <el-input v-model="ruleForm.combatCnt" placeholder="请输入至少5架飞机"></el-input>
     </el-form-item>
@@ -47,7 +47,9 @@
 </template>
 
 <style>
-
+form[class=demo-ruleForm]{
+  width: 980px;
+}
 </style>
 
 <script>
@@ -94,6 +96,9 @@ export default {
         if (valid) {
           generateData(this.ruleForm).then((res) => {
             console.log(res);
+            // this.$emit('transmission', [this.ruleForm.combatCnt, this.ruleForm.awacsCnt]);
+            localStorage.setItem('fighterNum', this.ruleForm.combatCnt);
+            localStorage.setItem('warningNum', this.ruleForm.awacsCnt);
             // 箭头函数下的this，不知道会不会指向错乱
             this.$router.push({ name: 'dataPlot' });
           });

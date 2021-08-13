@@ -43,12 +43,12 @@
       <el-table-column
         prop="fields.hnormalacceleration"
         label="水平法向加速度"
-        width="150">
+        width="135">
       </el-table-column>
       <el-table-column
         prop="fields.vnormalacceleration"
         label="竖直法向加速度"
-        width="150">
+        width="135">
       </el-table-column>
       <el-table-column
         prop="fields.rador"

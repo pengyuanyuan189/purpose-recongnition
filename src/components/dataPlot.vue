@@ -1,9 +1,8 @@
 <template>
   <div id="dataShowing">
-    <!-- <data-table planeType="战斗机"></data-table>
-    <data-table planeType="预警机"></data-table> -->
-    <track-fig planeType="fighter" planeNum="6"></track-fig>
-    <track-fig planeType="warning" planeNum="5"></track-fig>
+    <data-table planeType="战斗机"></data-table>
+    <data-table planeType="预警机"></data-table>
+    <track-fig :fighterNum="fighterNum" :warningNum="warningNum"></track-fig>
   </div>
 </template>
 
@@ -19,7 +18,8 @@ export default {
   },
   data() {
     return {
-      tableData: [],
+      warningNum: localStorage.getItem('warningNum'),
+      fighterNum: localStorage.getItem('fighterNum'),
     }
   },
   methods: {

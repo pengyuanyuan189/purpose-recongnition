@@ -9,7 +9,7 @@
       <el-menu-item index="2" route="modeltraining">模型训练</el-menu-item>
       <el-menu-item index="3" route="recongnition">意图识别</el-menu-item>
     </el-menu>
-    <div id="content">
+    <div id="content" :transmission="handleTransmission">
       <router-view/>
     </div>
   </div>
@@ -21,12 +21,17 @@ export default {
   data() {
     return {
       activeIndex: '1',
+      fighterNum: '',
+      warningNum: '',
     };
   },
   methods: {
     handleSelect(key, keyPath) {
       // 切换url
       this.activeIndex = key;
+    },
+    handleTransmission() {
+      
     },
   },
 };

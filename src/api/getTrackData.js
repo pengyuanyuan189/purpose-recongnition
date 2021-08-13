@@ -1,6 +1,6 @@
 import axios from './index';
 
-function getFighterTrack(offset, count, planeNum) {
+export function getFighterTrack(offset, count, planeNum) {
   return axios({
     method: 'get',
     url: '/getFighterTrackData',
@@ -12,7 +12,7 @@ function getFighterTrack(offset, count, planeNum) {
   });
 }
 
-function getWarningTrack(offset, count, planeNum) {
+export function getWarningTrack(offset, count, planeNum) {
   return axios({
     method: 'get',
     url: '/getWarningTrackData',
@@ -24,12 +24,12 @@ function getWarningTrack(offset, count, planeNum) {
   });
 }
 
-export default function getTrackData(offset, count, planeNum, planeType){
-  if(planeType === 'fighter'){
-    return getFighterTrack(offset, count, planeNum);
-  }else if(planeType === 'warning'){
-    return getWarningTrack(offset, count, planeNum);
-  }else{
-    console.log('Waring: 不存在的战机类型！');
-  }
-}
+// export default function getTrackData(offset, count, planeNum, planeType){
+//   if(planeType === 'fighter'){
+//     return getFighterTrack(offset, count, planeNum);
+//   }else if(planeType === 'warning'){
+//     return getWarningTrack(offset, count, planeNum);
+//   }else{
+//     console.log('Waring: 不存在的战机类型！');
+//   }
+// }
